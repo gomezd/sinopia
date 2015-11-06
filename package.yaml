@@ -103,27 +103,27 @@ scripts:
   test-travis: eslint --reset . && mocha -R spec ./test/functional ./test/unit
   test-only: mocha ./test/functional ./test/unit
   lint: eslint --reset .
-  prepublish: js-yaml package.yaml > package.json
-  clean-shrinkwrap: |
-    node -e '
-      function clean(j) {
-        if (!j) return
-        for (var k in j) {
-          delete j[k].from
-          delete j[k].resolved
-          if (j[k].dependencies) clean(j[k].dependencies)
-        }
-      }
-      x = JSON.parse(require("fs").readFileSync("./npm-shrinkwrap.json"))
-      clean(x.dependencies)
-      x = JSON.stringify(x, null, "  ")
-      require("fs").writeFileSync("./npm-shrinkwrap.json", x + "\n")
-    '
+#   prepublish: js-yaml package.yaml > package.json
+#   clean-shrinkwrap: |
+#     node -e '
+#       function clean(j) {
+#         if (!j) return
+#         for (var k in j) {
+#           delete j[k].from
+#           delete j[k].resolved
+#           if (j[k].dependencies) clean(j[k].dependencies)
+#         }
+#       }
+#       x = JSON.parse(require("fs").readFileSync("./npm-shrinkwrap.json"))
+#       clean(x.dependencies)
+#       x = JSON.stringify(x, null, "  ")
+#       require("fs").writeFileSync("./npm-shrinkwrap.json", x + "\n")
+#     '
 
-# we depend on streams2 stuff
-# it can be replaced with isaacs/readable-stream, ask if you need to use 0.8
-engines:
-  node: '>=0.10'
+# # we depend on streams2 stuff
+# # it can be replaced with isaacs/readable-stream, ask if you need to use 0.8
+# engines:
+#   node: '>=0.10'
 
 preferGlobal: true
 
