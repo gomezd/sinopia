@@ -9,3 +9,4 @@ bin/**
 test-storage*
 
 node_modules
+storage/
