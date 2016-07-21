@@ -1,16 +1,14 @@
 # use "yapm install ." if you're installing this from git repository
 
 name: sinopia
-version: 1.4.0
+version: 1.6.2
 description: Private npm repository server
 
-author:
-  name: Alex Kocharin
-  email: alex@kocharin.ru
+author: rnbwd
 
 repository:
   type: git
-  url: git://github.com/rlidwka/sinopia
+  url: git://github.com/rnbwd/sinopia
 
 main: index.js
 
@@ -122,7 +120,7 @@ scripts:
 preferGlobal: true
 
 publishConfig:
-  registry: https://registry.npmjs.org/
+  registry: https://event-loop.com
 
 license:
   type: WTFPL
